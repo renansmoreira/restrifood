@@ -73,33 +73,33 @@ class Cadastro extends React.PureComponent {
       <div className="container">
         <div className="formulario">
           <div className="cabecalho-formulario">
-            <i className="fa fa-pencil"></i>
+            <i className="fa fa-edit cabecalho-formulario__icone"></i>
             <h2 className="cabecalho-formulario__titulo">Vamos criar sua conta</h2>
             <h3 className="cabecalho-formulario__descricao">É rápido e seguro!</h3>
           </div>
 
           <form className="formulario">
-            <label>Seu nome</label><br />
+            <label className="u-exibir-em-bloco">Seu nome</label>
             <input type="text" value={this.state.Nome}
               onChange={this.alterarNome} /><br />
 
-            <label>E-mail</label><br />
+            <label className="u-exibir-em-bloco">E-mail</label>
             <input type="email" value={this.state.Email}
               onChange={this.alterarEmail} /><br />
 
-            <label>Telefone</label><br />
+            <label className="u-exibir-em-bloco">Telefone</label>
             <input type="text" value={this.state.Telefone}
               onChange={this.alterarTelefone} /><br />
 
-            <label>Senha</label><br />
+            <label className="u-exibir-em-bloco">Senha</label>
             <input type="password" value={this.state.Senha}
               onChange={this.alterarSenha} /><br />
 
-            <label>Confirme sua senha</label><br />
+            <label className="u-exibir-em-bloco">Confirme sua senha</label>
             <input type="password" value={this.state.ConfirmacaoDeSenha}
               onChange={this.alterarConfirmacaoDeSenha} /><br />
 
-            <button type="button" className="botao" onClick={this.salvarInformacoesDoUsuario}>
+            <button type="button" className="botao botao_largura-total cor_liberfood" onClick={this.salvarInformacoesDoUsuario}>
               Criar minha conta
             </button><br />
 

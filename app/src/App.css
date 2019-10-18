@@ -71,6 +71,28 @@
   color: red;
 }
 
+.fa.fa-edit {
+  color: var(--cor-secundaria);
+  padding-top: 24px;
+}
+
+input[type='email'] {
+  border-radius: 8px;
+  transition: .2s all ease-in-out;
+  width: 100%;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  height: 40px;
+  padding: 4px 8px;
+  background-color: #FFF;
+  border: 2px solid #E0E0E0;
+  color: #424242;
+}
+
+input {
+  margin-bottom: 16px;
+}
+
 .cabecalho-formulario__titulo,
 .cabecalho-formulario__descricao {
   text-align: center;
