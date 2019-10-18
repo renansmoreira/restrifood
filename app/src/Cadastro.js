@@ -71,39 +71,43 @@ class Cadastro extends React.PureComponent {
 
   render() {
     return (
-      <div className="Cadastro">
-        <i className="fa fa-pencil"></i>
-        <h2>Vamos criar sua conta</h2>
-        <h3>É rápido e seguro!</h3>
+      <div className="container">
+        <div className="formulario">
+          <div className="cabecalho-formulario">
+            <i className="fa fa-pencil"></i>
+            <h2 className="cabecalho-formulario__titulo">Vamos criar sua conta</h2>
+            <h3 className="cabecalho-formulario__descricao">É rápido e seguro!</h3>
+          </div>
 
-        <form>
-          <label>Seu nome</label><br />
-          <input type="text" value={this.state.Nome}
-            onChange={this.alterarNome} /><br />
+          <form className="formulario">
+            <label>Seu nome</label><br />
+            <input type="text" value={this.state.Nome}
+              onChange={this.alterarNome} /><br />
 
-          <label>E-mail</label><br />
-          <input type="email" value={this.state.Email}
-            onChange={this.alterarEmail} /><br />
+            <label>E-mail</label><br />
+            <input type="email" value={this.state.Email}
+              onChange={this.alterarEmail} /><br />
 
-          <label>Telefone</label><br />
-          <input type="text" value={this.state.Telefone}
-            onChange={this.alterarTelefone} /><br />
+            <label>Telefone</label><br />
+            <input type="text" value={this.state.Telefone}
+              onChange={this.alterarTelefone} /><br />
 
-          <label>Senha</label><br />
-          <input type="password" value={this.state.Senha}
-            onChange={this.alterarSenha} /><br />
+            <label>Senha</label><br />
+            <input type="password" value={this.state.Senha}
+              onChange={this.alterarSenha} /><br />
 
-          <label>Confirme sua senha</label><br />
-          <input type="password" value={this.state.ConfirmacaoDeSenha}
-            onChange={this.alterarConfirmacaoDeSenha} /><br />
+            <label>Confirme sua senha</label><br />
+            <input type="password" value={this.state.ConfirmacaoDeSenha}
+              onChange={this.alterarConfirmacaoDeSenha} /><br />
 
-          <button type="button" className="botao" onClick={this.salvarInformacoesDoUsuario}>
-            Criar minha conta
-          </button><br />
+            <button type="button" className="botao" onClick={this.salvarInformacoesDoUsuario}>
+              Criar minha conta
+            </button><br />
 
-          <Link to="/">Prefiro criar depois</Link>
-        </form>
-        <BarraDeNavegacao></BarraDeNavegacao>
+            <Link to="/">Prefiro criar depois</Link>
+          </form>
+          <BarraDeNavegacao></BarraDeNavegacao>
+        </div>
       </div>
     );
   }
