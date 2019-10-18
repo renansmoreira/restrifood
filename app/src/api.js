@@ -25,9 +25,21 @@ class Api {
         urlDaImagem: 'https://uploads.knightlab.com/storymapjs/7a64bb0361468cdfc9b5bda65d5fc8f9/roteiro-burguer-cult/_images/burguer.png'
       }
     ]);
-
     // return axios.get(`$[]`)
   };
+
+
+  consultarProduto = (idDoProduto) => {
+    return Promise.resolve({
+        id: 1, 
+        nome: "X-Soja",
+        descricao: "Breve descrição do produto que antecipa detalhes sobre o mesmo",
+        quantidade: 100,
+        preco: "20,50",
+        urlDaImagem: 'https://uploads.knightlab.com/storymapjs/7a64bb0361468cdfc9b5bda65d5fc8f9/roteiro-burguer-cult/_images/burguer.png',
+        tabelaNutricional: 'Xablau'
+    });
+  }
 
 }
 

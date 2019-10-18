@@ -26,3 +26,5 @@ class Produto(models.Model):
     ingredientes = models.CharField(max_length=7000)
     tabela_nutricional = models.CharField(max_length=7000)
     fornecedor = models.ForeignKey(Fornecedor, on_delete=models.CASCADE)
+    preco = models.CharField(max_length=100, null=True)
+    patologias = models.CharField(max_length=500, null=True)

@@ -31,6 +31,13 @@ class FornecedoresView(APIView):
 
         return Response({ 'sucesso': True })
 
+    def delete(self, request, format=None):
+        id = request.query_params.get('id')
+
+        Fornecedor.objects.get(pk=id).delete()
+
+        return Response({ 'sucesso': True })
+
 class ProdutosView(APIView):
     def get(self, request, format=None):
         id_do_fornecedor = request.query_params.get('id')
@@ -44,6 +51,8 @@ class ProdutosView(APIView):
             'foto': produto.foto,
             'ingredientes': produto.ingredientes,
             'tabelaNutricional': produto.tabela_nutricional,
+            'preco': produto.preco,
+            'patologias': produto.patologias.split(',') if produto.patologias else [],
         }, produtos))
 
         return Response({ 'sucesso': True, 'data': dados })
@@ -56,9 +65,18 @@ class ProdutosView(APIView):
             'ingredientes': request.data.get('ingredientes'),
             'tabela_nutricional': request.data.get('tabelaNutricional'),
             'fornecedor': Fornecedor.objects.get(pk=request.data.get('fornecedorId')),
+            'preco': request.data.get('preco'),
+            'patologias': request.data.get('patologias'),
         }
 
         novo_produto = Produto.objects.create(**dados)
         novo_produto.save()
+
+        return Response({ 'sucesso': True })
+
+    def delete(self, request, format=None):
+        id = request.query_params.get('id')
+
+        Produto.objects.get(pk=id).delete()
 
         return Response({ 'sucesso': True })

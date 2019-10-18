@@ -18,7 +18,7 @@ class Fornecedor extends React.PureComponent {
 
   irParaDetalhesDoFornecedor(fornecedor) {
     localStorage.setItem('fornecedor', fornecedor.id);
-    document.location.href = '/detalhes';
+    document.location.href = '/detalhes-fornecedor';
   }
 
   render() {

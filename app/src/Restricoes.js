@@ -33,7 +33,7 @@ class Restricoes extends React.PureComponent {
 
   salvarPatologiasSelecionadas = () => {
     localStorage.setItem('restrifood-patologias', this.state.patologias);
-    document.location.href = '/detalhes';
+    document.location.href = '/detalhes-fornecedor';
   }
 
   render() {
