@@ -17,7 +17,11 @@ class Api {
 
 
   consultarProduto = (idDoProduto) => {
-    return axios.get(`${this.ENDERECO_DA_API}produtos/${idDoProduto}`);
+    return axios.get(`${this.ENDERECO_DA_API}produtos/?id=${idDoProduto}`);
+  }
+  
+  buscarFornecedor = (idDoFornecedor) => {
+    return axios.get(`${this.ENDERECO_DA_API}fornecedores/?id=${idDoFornecedor}`);
   }
 
 }

@@ -8,9 +8,10 @@ class DetalhesDoFornecedor extends React.PureComponent {
     super(props);
     this.produtos = [];
     this.api = new Api();
-    this.idDoFornecedor = 1;
+    this.idDoFornecedor = localStorage.getItem('fornecedor');
     this.state = {
-      produtos: []
+      produtos: [],
+      fornecedor: {}
     };
 
     this.api.consultarProdutosDeUmFornecedor(this.idDoFornecedor)
@@ -19,17 +20,23 @@ class DetalhesDoFornecedor extends React.PureComponent {
           produtos: resposta.data.data
         })
       });
+    this.api.buscarFornecedor(this.idDoFornecedor)
+    .then((resposta) => {
+        this.setState({
+          fornecedor: resposta.data.data
+        })
+    });
   }
 
   render() {
     return (
       <div className="detalhes-do-fornecedor">
-        <Link to="/restricoes">
+        <Link to="/fornecedores">
           voltar
         </Link>
 
-        <h3>A Casa do Luís</h3> <br />
-        (67) 3026-4647 Ver endereço <br />
+        <h3>{this.state.fornecedor.nome}</h3> <br />
+        {this.state.fornecedor.telefone} <br />
         <span>Sem glúten</span>
         <span>Sem lactose</span>
 
