@@ -13,6 +13,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import 'font-awesome/css/font-awesome.min.css';
 import 'digix-ui/ativos/sass/temas/digix-ui.scss';
+import DetalhesDoProduto from './DetalhesDoProduto';
 
 ReactDOM.render(
   <BrowserRouter>
@@ -22,7 +23,8 @@ ReactDOM.render(
       <Route path="/cadastro" component={Cadastro}></Route>
       <Route path="/restricoes" component={Restricoes}></Route>
       <Route path="/confirmacao" component={ConfirmacaoDeCadastro}></Route>
-      <Route path="/detalhes" component={DetalhesDoFornecedor}></Route>
+      <Route path="/detalhes-fornecedor" component={DetalhesDoFornecedor}></Route>
+      <Route path="/detalhes-produto" component={DetalhesDoProduto}></Route>
     </Switch>
   </BrowserRouter>, document.getElementById('root'));
 
