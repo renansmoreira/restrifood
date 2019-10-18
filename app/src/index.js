@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import Sobre from './Sobre';
+import ConfirmacaoDeCadastro from './ConfirmacaoDeCadastro';
 import * as serviceWorker from './serviceWorker';
 
 import { BrowserRouter, Switch, Route } from "react-router-dom";
@@ -17,6 +18,7 @@ ReactDOM.render(
       <Route path="/" exact component={App}></Route>
       <Route path="/sobre" component={Sobre}></Route>
       <Route path="/cadastro" component={Cadastro}></Route>
+      <Route path="/confirmacao" component={ConfirmacaoDeCadastro}></Route>
     </Switch>
   </BrowserRouter>, document.getElementById('root'));
 
