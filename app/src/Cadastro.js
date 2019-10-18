@@ -18,7 +18,6 @@ class Cadastro extends React.PureComponent {
     };
 
     this.api = new Api();
-    this.history = useHistory();
 
     this.alterarNome = this.alterarNome.bind(this);
     this.alterarEmail = this.alterarEmail.bind(this);
@@ -67,6 +66,7 @@ class Cadastro extends React.PureComponent {
     const usuario = {...this.state};
     console.log('Usuário', usuario);
     localStorage.setItem('restrifood-usuario', usuario);
+    this.history = useHistory();
     this.history.push('/restricoes');
   }
 
