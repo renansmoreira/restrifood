@@ -8,22 +8,22 @@ function BarraDeNavegacao() {
     <nav>
       <ul>
       <li>
-          <a>
+          <Link to="/">
             <span class="fa fa-home"></span>
             Início
-            </a>
+          </Link>
         </li>
         <li>
-          <a>
-            <span class="fa fa-comments"></span>
-            Chat
-            </a>
+          <Link to="/chat">
+              <span class="fa fa-comments"></span>
+              Chat
+          </Link>
         </li>
         <li>
-          <a>
-            <span class="fa fa-user"></span>
-            Perfíl
-            </a>
+          <Link to="/perfil">
+              <span class="fa fa-user"></span>
+              Perfíl
+          </Link>
         </li>
       </ul>
     </nav>
