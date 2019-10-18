@@ -3,8 +3,6 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import Api from './api';
 
-import { useHistory } from "react-router-dom";
-
 class Cadastro extends React.PureComponent {
 
   constructor(props) {
@@ -66,8 +64,7 @@ class Cadastro extends React.PureComponent {
     const usuario = {...this.state};
     console.log('Usuário', usuario);
     localStorage.setItem('restrifood-usuario', usuario);
-    this.history = useHistory();
-    this.history.push('/restricoes');
+    document.location.href = '/restricoes';
   }
 
   render() {
