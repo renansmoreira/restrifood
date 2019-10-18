@@ -7,12 +7,16 @@ import * as serviceWorker from './serviceWorker';
 
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
+import 'font-awesome/css/font-awesome.min.css';
+import 'digix-ui/ativos/sass/temas/digix-ui.scss';
+import Cadastro from './Cadastro';
 
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
       <Route path="/" exact component={App}></Route>
       <Route path="/sobre" component={Sobre}></Route>
+      <Route path="/cadastro" component={Cadastro}></Route>
     </Switch>
   </BrowserRouter>, document.getElementById('root'));
 
