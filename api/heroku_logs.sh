@@ -1,1 +1,1 @@
-heroku logs --app stcare --tail
+heroku logs --app restrifood --tail

@@ -1,1 +1,1 @@
-heroku ps:exec --app stcare --dyno web.1
+heroku ps:exec --app restrifood --dyno web.1
