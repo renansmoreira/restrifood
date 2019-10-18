@@ -23,9 +23,17 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'ix=go$fj^5#nzf%pmh(8q4(6h&h+-1w7yvh#%b06bsolc03ke8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+ENV_NAME = os.environ.get('ENV_NAME') if 'ENV_NAME' in os.environ else 'LOCAL'
+IS_PROD_ENV = ENV_NAME == 'production'
 
-ALLOWED_HOSTS = ['*']
+print('Running under ' + ENV_NAME + ' enviroment')
+
+DEBUG = True
+    
+if IS_PROD_ENV:
+    ALLOWED_HOSTS = [ 'restrifood.herokuapp.com' ]
+else:
+    ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -51,6 +59,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'restrifood.urls'
 
@@ -83,6 +93,9 @@ DATABASES = {
     }
 }
 
+if IS_PROD_ENV:
+  db_from_env = dj_database_url.config(conn_max_age=500)
+  DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -108,7 +121,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Campo_Grande'
 
 USE_I18N = True
 
@@ -121,3 +134,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
