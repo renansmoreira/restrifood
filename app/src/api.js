@@ -7,6 +7,13 @@ class Api {
     return axios.post(`${this.ENDERECO_DA_API}/clientes`, usuario);
   };
 
+  buscarFornecedores = () => {
+    // return Promise.resolve([
+    //   {id:1, nome:"Casa do Luis", logo: 'https://uploads.knightlab.com/storymapjs/7a64bb0361468cdfc9b5bda65d5fc8f9/roteiro-burguer-cult/_images/burguer.png'}, {id:2, nome:"Casa do Bolos de Jesus", logo: ""}, {id:3, nome:"Comida Fit da Tia Maria", logo: ""}
+    // ]);
+    return axios.get(`${this.ENDERECO_DA_API}fornecedores`);
+  };
+
   consultarProdutosDeUmFornecedor = (idDoFornecedor) => {
     return Promise.resolve([
       {
@@ -21,6 +28,7 @@ class Api {
     // return axios.get(`$[]`)
   };
 
+
   consultarProduto = (idDoProduto) => {
     return Promise.resolve({
         id: 1, 
@@ -32,6 +40,7 @@ class Api {
         tabelaNutricional: 'Xablau'
     });
   }
+
 }
 
 export default Api;

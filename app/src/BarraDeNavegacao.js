@@ -5,23 +5,29 @@ import { Link } from "react-router-dom";
 
 function BarraDeNavegacao() {
   return (
-    <nav>
-      <ul>
-      <li>
+    <nav className="navegacao">
+      <ul className="navegacao-lista">
+      <li className="navegacao-lista__item">
           <Link to="/">
-            <span class="fa fa-home"></span>
+            <p>
+              <i class="fa fa-home"></i>
+            </p>
             Início
           </Link>
         </li>
-        <li>
+        <li className="navegacao-lista__item">
           <Link to="/chat">
-              <span class="fa fa-comments"></span>
+              <p>
+                <i class="fa fa-comments"></i>
+              </p>
               Chat
           </Link>
         </li>
-        <li>
+        <li className="navegacao-lista__item">
           <Link to="/perfil">
-              <span class="fa fa-user"></span>
+              <p>
+                <i class="fa fa-user"></i>
+              </p>
               Perfíl
           </Link>
         </li>

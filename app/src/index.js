@@ -6,6 +6,8 @@ import Sobre from './Sobre';
 import Cadastro from './Cadastro';
 import Restricoes from './Restricoes';
 import ConfirmacaoDeCadastro from './ConfirmacaoDeCadastro';
+
+import Fornecedor from './Fornecedor';
 import DetalhesDoFornecedor from './DetalhesDoFornecedor';
 import DetalhesDoProduto from './DetalhesDoProduto';
 import Chat from './Chat';
@@ -24,6 +26,7 @@ ReactDOM.render(
       <Route path="/cadastro" component={Cadastro}></Route>
       <Route path="/restricoes" component={Restricoes}></Route>
       <Route path="/confirmacao" component={ConfirmacaoDeCadastro}></Route>
+      <Route path="/fornecedores" component={Fornecedor}></Route>
       <Route path="/detalhes-fornecedor" component={DetalhesDoFornecedor}></Route>
       <Route path="/detalhes-produto" component={DetalhesDoProduto}></Route>
       <Route path="/chat" component={Chat}></Route>
