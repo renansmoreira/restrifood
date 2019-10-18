@@ -7,13 +7,14 @@ import Cadastro from './Cadastro';
 import Restricoes from './Restricoes';
 import ConfirmacaoDeCadastro from './ConfirmacaoDeCadastro';
 import DetalhesDoFornecedor from './DetalhesDoFornecedor';
+import DetalhesDoProduto from './DetalhesDoProduto';
+import Chat from './Chat';
 import * as serviceWorker from './serviceWorker';
 
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import 'font-awesome/css/font-awesome.min.css';
 import 'digix-ui/ativos/sass/temas/digix-ui.scss';
-import DetalhesDoProduto from './DetalhesDoProduto';
 
 ReactDOM.render(
   <BrowserRouter>
@@ -25,6 +26,7 @@ ReactDOM.render(
       <Route path="/confirmacao" component={ConfirmacaoDeCadastro}></Route>
       <Route path="/detalhes-fornecedor" component={DetalhesDoFornecedor}></Route>
       <Route path="/detalhes-produto" component={DetalhesDoProduto}></Route>
+      <Route path="/chat" component={Chat}></Route>
     </Switch>
   </BrowserRouter>, document.getElementById('root'));
 

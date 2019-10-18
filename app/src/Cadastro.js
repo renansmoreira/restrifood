@@ -64,7 +64,6 @@ class Cadastro extends React.PureComponent {
 
   salvarInformacoesDoUsuario() {
     const usuario = {...this.state};
-    console.log('Usuário', usuario);
     localStorage.setItem('restrifood-usuario', usuario);
     document.location.href = '/restricoes';
   }
