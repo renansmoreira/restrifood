@@ -7,6 +7,18 @@ class Fornecedor(models.Model):
     telefone = models.CharField(max_length=15)
     email = models.CharField(max_length=150)
 
+    @classmethod
+    def criar(self, **kwargs):
+        dados = {
+            'nome': kwargs.get('nome'),
+            'telefone': kwargs.get('telefone'),
+            'email': kwargs.get('email'),
+            'logo': kwargs.get('logo'),
+            'horarios_de_atendimento': kwargs.get('horarios_de_atendimento'),
+        }
+
+        return self(**dados)
+
 class Produto(models.Model):
     nome = models.CharField(max_length=200)
     descricao = models.CharField(max_length=5000)
