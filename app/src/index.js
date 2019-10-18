@@ -6,7 +6,9 @@ import Sobre from './Sobre';
 import Cadastro from './Cadastro';
 import Restricoes from './Restricoes';
 import ConfirmacaoDeCadastro from './ConfirmacaoDeCadastro';
+
 import Fornecedor from './Fornecedor';
+import DetalhesDoFornecedor from './DetalhesDoFornecedor';
 import * as serviceWorker from './serviceWorker';
 
 import { BrowserRouter, Switch, Route } from "react-router-dom";
@@ -23,6 +25,7 @@ ReactDOM.render(
       <Route path="/restricoes" component={Restricoes}></Route>
       <Route path="/confirmacao" component={ConfirmacaoDeCadastro}></Route>
       <Route path="/fornecedores" component={Fornecedor}></Route>
+      <Route path="/detalhes" component={DetalhesDoFornecedor}></Route>
     </Switch>
   </BrowserRouter>, document.getElementById('root'));
 
