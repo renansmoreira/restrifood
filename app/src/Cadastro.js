@@ -103,9 +103,7 @@ class Cadastro extends React.PureComponent {
               Criar minha conta
             </button><br />
 
-            <Link to="/">Prefiro criar depois</Link>
           </form>
-          <BarraDeNavegacao></BarraDeNavegacao>
         </div>
       </div>
     );
