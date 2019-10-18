@@ -21,6 +21,11 @@ class DetalhesDoFornecedor extends React.PureComponent {
       });
   }
 
+  irParaDetalhesDoProduto(idDoProduto) {
+    localStorage.setItem('idDoProduto', idDoProduto);
+    document.location.href = '/detalhes-produto';
+  }
+
   render() {
     return (
       <div className="detalhes-do-fornecedor">
@@ -41,7 +46,7 @@ class DetalhesDoFornecedor extends React.PureComponent {
             <p>{produto.descricao}</p>
             <p>{produto.quantidade}</p>
             <p>R$ {produto.preco}</p>
-            <img src={produto.urlDaImagem} height="100" width="100" />
+            <img src={produto.urlDaImagem} height="100" width="100" onClick={this.irParaDetalhesDoProduto(produto.id)} />
           </div>
         ))}
       </div>
