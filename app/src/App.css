@@ -1,3 +1,19 @@
+:root {
+  --cor-primaria: #9AFF1A;
+  --cor-secundaria: #71c700;
+  --cor-terciaria: #4d8800;
+}
+
+.cor_liberfood {
+  background: var(--cor-terciaria) !important;
+  color: white !important;
+}
+
+.cor_liberfood_contorno {
+  border-color: var(--cor-secundaria) !important;
+  color: var(--cor-terciaria) !important;
+}
+
 .App {
   text-align: center;
 }
@@ -17,4 +33,87 @@
 
 .App-link {
   color: #09d3ac;
+}
+
+/* BarraDeNavegacao */
+.navegacao {
+
+}
+
+.navegacao-lista {
+
+}
+
+.navegacao-lista__item {
+
+}
+
+/* Cadastro */
+.container {
+
+}
+
+.cadastro {
+
+}
+
+.cabecalho-formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cabecalho-formulario__icone.fa {
+  font-size: 48px;
+}
+
+.fa.fa-heartbeat {
+  color: red;
+}
+
+.cabecalho-formulario__titulo,
+.cabecalho-formulario__descricao {
+  text-align: center;
+}
+
+.cabecalho-formulario__titulo {
+  letter-spacing: -0.04rem;
+  margin: 16px 0 8px;
+}
+
+.cabecalho-formulario__descricao {
+  font-weight: 400;
+  color: #555555;
+  margin: 0px 0px 16px;
+}
+
+
+.patologias {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  padding: 24px 0;
+
+}
+
+.nome-patologia {
+  border: 2px solid rgb(151, 151, 151);
+  padding: 8px 16px;
+  display: inline-block;
+  margin: 4px;
+  border-radius: 36px;
+  cursor: pointer;
+}
+
+.nome-patologia_selecionado {
+  background: var(--cor-primaria);
+  border-color: var(--cor-secundaria);
+}
+
+.botao_descricao {
+  display: block;
+  font-size: 70%;
+  color: #555 !important;
 }
