@@ -6,14 +6,27 @@ from fornecedores.models import Fornecedor, Produto
 
 class FornecedoresView(APIView):
     def get(self, request, format=None):
-        dados = list(map(lambda fornecedor: {
-            'id': fornecedor.pk,
-            'nome': fornecedor.nome,
-            'telefone': fornecedor.telefone,
-            'email': fornecedor.email,
-            'logo': fornecedor.logo,
-            'horariosDeAtendimento': fornecedor.horarios_de_atendimento
-        }, Fornecedor.objects.all()))
+        id = request.query_params.get('id')
+
+        if id:
+            fornecedor = Fornecedor.objects.get(pk=1)
+            dados = {
+                'id': fornecedor.pk,
+                'nome': fornecedor.nome,
+                'telefone': fornecedor.telefone,
+                'email': fornecedor.email,
+                'logo': fornecedor.logo,
+                'horariosDeAtendimento': fornecedor.horarios_de_atendimento
+            }
+        else:
+            dados = list(map(lambda fornecedor: {
+                'id': fornecedor.pk,
+                'nome': fornecedor.nome,
+                'telefone': fornecedor.telefone,
+                'email': fornecedor.email,
+                'logo': fornecedor.logo,
+                'horariosDeAtendimento': fornecedor.horarios_de_atendimento
+            }, Fornecedor.objects.all()))
 
         return Response({ 'sucesso': True, 'data': dados })
 
