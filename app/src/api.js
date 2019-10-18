@@ -6,6 +6,10 @@ class Api {
   criarUsuario = (usuario) => {
     return axios.post(`${this.ENDERECO_DA_API}/clientes`, usuario);
   };
+
+  buscarFornecedores = () => {
+    return axios.get(`${this.ENDERECO_DA_API}fornecedores`);
+  }
 }
 
 export default Api;
