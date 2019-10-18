@@ -9,7 +9,6 @@ class Restricoes extends React.PureComponent {
       patologias: []
     };
     
-    this.patologias = Patologias;
     this.registrarPatologia = this.registrarPatologia.bind(this);
     this.salvarPatologiasSelecionadas = this.salvarPatologiasSelecionadas.bind(this);
   }
@@ -33,7 +32,6 @@ class Restricoes extends React.PureComponent {
   }
 
   salvarPatologiasSelecionadas = () => {
-    console.log('patologias selecionadas', this.state.patologias);
     localStorage.setItem('restrifood-patologias', this.state.patologias);
     document.location.href = '/';
   }
@@ -45,7 +43,7 @@ class Restricoes extends React.PureComponent {
         <h2>Vamos possui alguma patologia?</h2>
         <h3>Desta forma, podemos sugerir opções que se encaixam na sua dieta</h3>
 
-        {this.patologias.map(patologia => (
+        {Patologias.map(patologia => (
           <span key={patologia} className="cartao" onClick={() => this.registrarPatologia(patologia)}>
             {patologia}
             <p>{this.state.patologias.includes(patologia) ? 'Selecionado' : ''}</p>
