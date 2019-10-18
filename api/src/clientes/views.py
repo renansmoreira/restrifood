@@ -7,7 +7,11 @@ from clientes.models import Cliente
 class ClientesView(APIView):
     def get(self, request, format=None):
         dados = list(map(lambda cliente: {
-            'nome': cliente.nome
+            'id': cliente.pk,
+            'nome': cliente.nome,
+            'telefone': cliente.telefone,
+            'email': cliente.email,
+            'patologias': cliente.obter_patologias(),
         }, Cliente.objects.all()))
 
         return Response({ 'sucesso': True, 'data': dados })
@@ -19,9 +23,18 @@ class ClientesView(APIView):
             'email': request.data.get('email'),
             'senha': request.data.get('senha'),
             'confirmacao_de_senha': request.data.get('confirmacaoDeSenha'),
+            'patologias': request.data.get('patologias'),
         }
 
         novo_cliente = Cliente.criar(**dados)
+        novo_cliente.adicionar_patologias(dados['patologias'])
         novo_cliente.save()
+
+        return Response({ 'sucesso': True })
+
+    def delete(self, request, format=None):
+        id = request.query_params.get('id')
+
+        Cliente.objects.get(pk=id).delete()
 
         return Response({ 'sucesso': True })

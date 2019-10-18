@@ -68,3 +68,12 @@ class ClienteTest(TestCase):
             return
 
         self.fail('Exceção esperada, mas nenhuma lançada')
+
+    def test_deve_adicionar_patologias(self):
+        patologias = [ 'renal', 'celíaco' ]
+        cliente = Cliente.criar(nome=self.nome, telefone=self.telefone, email=self.email,
+            senha=self.senha, confirmacao_de_senha=self.senha)
+          
+        cliente.adicionar_patologias(patologias)
+
+        self.assertEqual(cliente.obter_patologias(), patologias)
