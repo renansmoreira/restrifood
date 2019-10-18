@@ -31,10 +31,7 @@ print('Running under ' + ENV_NAME + ' enviroment')
 
 DEBUG = True
     
-if IS_PROD_ENV:
-    ALLOWED_HOSTS = [ 'restrifood.herokuapp.com' ]
-else:
-    ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
