@@ -33,32 +33,39 @@ class Restricoes extends React.PureComponent {
 
   salvarPatologiasSelecionadas = () => {
     localStorage.setItem('restrifood-patologias', this.state.patologias);
-    document.location.href = '/detalhes-fornecedor';
+    document.location.href = '/fornecedores';
   }
 
   render() {
     return (
-      <div className="restricoes">
-        <i className="fa fa-pencil"></i>
-        <h2>Vamos possui alguma patologia?</h2>
-        <h3>Desta forma, podemos sugerir opções que se encaixam na sua dieta</h3>
+      <div className="container">
+        <p className="cabecalho-formulario">
+          <i className="fa fa-heartbeat u-texto-alinhado-ao-centro cabecalho-formulario__icone"></i>
+        </p>
+        <h2 className="cabecalho-formulario__titulo">Você possui alguma patologia?</h2>
+        <h3 className="cabecalho-formulario__descricao">Desta forma, podemos sugerir opções de alimentação que se encaixam na sua dieta</h3>
 
+        <div className="patologias">
+        
         {Patologias.map(patologia => (
-          <span key={patologia} className="cartao" onClick={() => this.registrarPatologia(patologia)}>
+          <span key={patologia} className={`nome-patologia ${this.state.patologias.includes(patologia) ? ' nome-patologia_selecionado' : ''}` } onClick={() => this.registrarPatologia(patologia)}>
             {patologia}
-            <p>{this.state.patologias.includes(patologia) ? 'Selecionado' : ''}</p>
+            
           </span>
         ))}
-        <br />
 
-        <button type="button" className="botao" onClick={this.salvarPatologiasSelecionadas}
-          disabled={!this.state.patologias || !this.state.patologias.length}>
-          Próximo
-        </button><br />
-        <button type="button" className="botao">
-          Não possuo patologias <br/>
-          Apenas quero comer melhor
-        </button>
+        </div>
+
+        <div className="grade__linha">
+          <button type="button" className="botao cor_liberfood" onClick={this.salvarPatologiasSelecionadas}
+            disabled={!this.state.patologias || !this.state.patologias.length}>
+            Próximo
+          </button><br />
+          <button type="button" className="botao botao_grande botao_contorno cor_liberfood_contorno">
+            Não possuo patologias 
+            <span className="botao_descricao">Apenas quero comer melhor</span>
+          </button>
+        </div>
       </div>
     );
   }
