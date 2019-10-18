@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Link } from "react-router-dom";
 import Api from './api';
+import BarraDeNavegacao from './BarraDeNavegacao'
 
 import { useHistory } from "react-router-dom";
 
@@ -18,6 +19,7 @@ class Cadastro extends React.PureComponent {
     };
 
     this.api = new Api();
+    
 
     this.alterarNome = this.alterarNome.bind(this);
     this.alterarEmail = this.alterarEmail.bind(this);
@@ -104,6 +106,7 @@ class Cadastro extends React.PureComponent {
 
           <Link to="/">Prefiro criar depois</Link>
         </form>
+        <BarraDeNavegacao></BarraDeNavegacao>
       </div>
     );
   }
