@@ -16,7 +16,7 @@ class DetalhesDoFornecedor extends React.PureComponent {
     this.api.consultarProdutosDeUmFornecedor(this.idDoFornecedor)
       .then((resposta) => {
         this.setState({
-          produtos: resposta
+          produtos: resposta.data.data
         })
       });
   }
@@ -41,7 +41,7 @@ class DetalhesDoFornecedor extends React.PureComponent {
             <p>{produto.descricao}</p>
             <p>{produto.quantidade}</p>
             <p>R$ {produto.preco}</p>
-            <img src={produto.urlDaImagem} height="100" width="100" />
+            <img src={produto.foto} height="100" width="100" />
           </div>
         ))}
       </div>
